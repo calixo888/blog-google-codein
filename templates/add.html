@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Blog Website - Add Page</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="text-center display-2 mb-5">Add Page</h1>
+      <form class="float-form" method="post">
+        {% csrf_token %}
+        <input class="form-control mb-3" type="text" name="title" placeholder="Title">
+        <textarea class="form-control mb-3" name="content" rows="6" placeholder="Content"></textarea>
+        <input class="btn btn-secondary btn-lg btn-block" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
